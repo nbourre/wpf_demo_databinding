@@ -1,11 +1,11 @@
-﻿<Window x:Class="wpf_demo_observableCollection_noWork.ChangeNotificationSample"
+﻿<Window x:Class="wpf_demo_observableCollection.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:wpf_demo_observableCollection_noWork"
+        xmlns:local="clr-namespace:wpf_demo_observableCollection"
         mc:Ignorable="d"
-        Title="ChangeNotificationSampleNoWork" Height="150" Width="300">
+        Title="Notification de changement" Height="135" Width="300">
     <DockPanel Margin="10">
         <StackPanel DockPanel.Dock="Right" Margin="10,0,0,0">
             <Button Name="btnAddUser" Click="btnAddUser_Click">Ajouter</Button>
