@@ -19,9 +19,6 @@ namespace wpf_demo_observableCollection
 
             lbUsers.ItemsSource = users;
 
-            User user = null;
-
-            btnAddUser.Content = user?.Name ?? new User().Name;
         }
 
         private void btnAddUser_Click(object sender, RoutedEventArgs e)
@@ -47,13 +44,14 @@ namespace wpf_demo_observableCollection
         private string name;
         public string Name
         {
-            get { return this.name; }
+            get { return name; }
             set
             {
-                if (this.name != value)
+                User user = this;
+                if (user.name != value)
                 {
-                    this.name = value;
-                    this.NotifyPropertyChanged("Name");
+                    user.name = value;
+                    user.NotifyPropertyChanged("Name");
                 }
             }
         }
@@ -62,8 +60,7 @@ namespace wpf_demo_observableCollection
 
         public void NotifyPropertyChanged(string propName)
         {
-            if (this.PropertyChanged != null)
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
 
         }
     }
